@@ -1,0 +1,93 @@
+{
+  "fileCount": 17,
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "sha256:f9bcfdd4e5413de06f40c2025919aad88c0ad80aecaf2d415f1dc77dcc022aed",
+      "size_bytes": 331
+    },
+    {
+      "path": "README.md",
+      "sha256": "sha256:65283d6db962750da163f1c6ec19ec9c713fbcbef20c4086ffdb151956cad340",
+      "size_bytes": 4316
+    },
+    {
+      "path": "artifacts/mainnet/activation-cycle-1.json",
+      "sha256": "sha256:c70a3484588fee40e3cb3a4123467edc30d2042f4e3c6063bfff18f9dce898c5",
+      "size_bytes": 1690
+    },
+    {
+      "path": "artifacts/mainnet/genesis.json",
+      "sha256": "sha256:eb576aaf5b2073e67eef28224cc53f342a41bfad5c1c6060c894993c2d7911db",
+      "size_bytes": 2312
+    },
+    {
+      "path": "artifacts/mainnet/launch-package-v1.json",
+      "sha256": "sha256:17c7fbfce34ed45bac649ee14d7cfea35e014b81939f119cbdd1d618b420b554",
+      "size_bytes": 2766
+    },
+    {
+      "path": "artifacts/mainnet/reproducibility-hypothesis.json",
+      "sha256": "sha256:6d96b6545844fad0cd2a1399ed72cefaedc7962189e762f18389b737b103c7bf",
+      "size_bytes": 2815
+    },
+    {
+      "path": "contracts/ProteanLedger.abi.json",
+      "sha256": "sha256:df70be041e30ea30b511469be099245c31d2e1ebba836d94c493688f06157dfb",
+      "size_bytes": 43386
+    },
+    {
+      "path": "deployments/base-mainnet.json",
+      "sha256": "sha256:ead7558ea9ff1b73c033602f092e9de1cfc137b2df5b75c29ccca879426953b5",
+      "size_bytes": 480
+    },
+    {
+      "path": "diagrams/architecture.mmd",
+      "sha256": "sha256:c9a4927ebd363a5348a99e1c2ddbc9bfcd4fa16781cf87f17edae2535aca9790",
+      "size_bytes": 1271
+    },
+    {
+      "path": "diagrams/verification.mmd",
+      "sha256": "sha256:e7e25aaec8e3d3c7dce06f5a50199690d003206d2e967ecfd18dea93e6daa756",
+      "size_bytes": 1346
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "sha256:341a99b4f561bbcba899dda39cfc0cf8ac57bec415cde25038d3b203f73313a2",
+      "size_bytes": 3096
+    },
+    {
+      "path": "docs/events.md",
+      "sha256": "sha256:62d339a1091da8f9407ed8d25cdd75610c87f802c6d0fd4c14c31ffd915d41a9",
+      "size_bytes": 4147
+    },
+    {
+      "path": "docs/provenance.md",
+      "sha256": "sha256:448f7afef68b5a994e575dbfa7182f32a70c0d2a3fee7af4d64d616e5d48e749",
+      "size_bytes": 4405
+    },
+    {
+      "path": "docs/reproducibility.md",
+      "sha256": "sha256:d23eb24e21dd0dc25d9b51dacff0b81c5f1a181782a2201fdc08519d37948676",
+      "size_bytes": 4605
+    },
+    {
+      "path": "docs/roles.md",
+      "sha256": "sha256:7d542f20108517c550b93c36b05451e4058c91c5f76a68a6d85533f01803b2e7",
+      "size_bytes": 2917
+    },
+    {
+      "path": "docs/schema.md",
+      "sha256": "sha256:f71705c4930ce681f2c9e1e0cdcbfb699905e3f377b93627deb4d794c5c9ec48",
+      "size_bytes": 3194
+    },
+    {
+      "path": "scripts/index_ledger_from_genesis.py",
+      "sha256": "sha256:321fec53fc56b61a20a10260c0a4adfcbb8b86f638b38dfb79ee7a9a2586507a",
+      "size_bytes": 27486
+    }
+  ],
+  "generatedAt": "2026-05-29T03:43:06.944995+00:00",
+  "schema": "protean.ledger-mirror.manifest.v1",
+  "sourceRepoCommit": null
+}

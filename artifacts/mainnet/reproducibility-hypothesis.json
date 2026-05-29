@@ -1,0 +1,38 @@
+{
+  "schema": "protean.ledger-mirror.bootstrap-record.v1",
+  "recordId": "0x828fa1bd558cc7a55ff6762130c40ed1120f42cb28550fbf1df98b529e7b4ae0",
+  "recordType": "Hypothesis",
+  "recordTypeOrdinal": 2,
+  "title": "Hypothesis: any third party can reproduce the Protean Ledger state digest from genesis using only the deployed contract and a public Base RPC, with no dependency on Protean infrastructure.",
+  "summary": "The deployed indexer code is public and stateless beyond the SQLite database; the canonical-bytes serialization is RFC 8785 with a single bytea-hex local rule; event ordering is total over (block, log_index); record IDs are content-addressed. Third-party reproduction is the architectural test of independence. This hypothesis is falsifiable by demonstrating divergent digests from identical inputs.",
+  "author": "Protean Labs",
+  "runtimeId": "protean-mainnet-cycle-1",
+  "chainId": 8453,
+  "network": "base-mainnet",
+  "contractAddress": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "blockNumber": 46613032,
+  "txHash": "0xea3d0f9bd7430bb322b745e8a50e1a1ef038e0d221847709fc9b5979a16de507",
+  "basescan": {
+    "tx": "https://basescan.org/tx/0xea3d0f9bd7430bb322b745e8a50e1a1ef038e0d221847709fc9b5979a16de507"
+  },
+  "explorer": "https://www.protean.sh/ledger/record/0x828fa1bd558cc7a55ff6762130c40ed1120f42cb28550fbf1df98b529e7b4ae0",
+  "originalReplayPointer": "git:meltedmindz/protean-labs@main:scripts/index_ledger_from_genesis.py#sha256:reproducibility",
+  "publicationUrl": "https://www.protean.sh/ledger/verify",
+  "verifiedBy": {
+    "publishedDigest": "sha256:6049438bd0527c25270ce6cbd0e7bac7912a735e5e0e95ca65fc703910f747f6",
+    "verifiedAtBlock": 46613079,
+    "verifiedAtBlockRange": "46612386..46613079 (the four bootstrap records)",
+    "rpcEndpointUsedForVerification": "https://mainnet.base.org (public, no key)",
+    "verificationDescription": "Fresh SQLite database, no Protean state on disk. Ran scripts/index_ledger_from_genesis.py from genesis. Digest reproduced byte-for-byte. Hypothesis verified by behavior immediately after registration; reverification possible at any time using the canonical script in this mirror."
+  },
+  "bootstrap": {
+    "isBootstrapRecord": true,
+    "verificationStatus": {
+      "chainIdentity": "available",
+      "contentDigest": "available",
+      "publicArtifactSha256": "limited — replayPointer cites the private repo with placeholder anchor 'sha256:reproducibility'",
+      "indexerReproduction": "available — and the hypothesis itself is verified by this verification",
+      "note": "This is the most important of the four bootstrap records because the canonical indexer script IS available in this mirror at scripts/index_ledger_from_genesis.py, allowing the hypothesis to be re-verified by any reader from genesis."
+    }
+  }
+}

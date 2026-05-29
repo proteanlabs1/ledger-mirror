@@ -1,0 +1,31 @@
+{
+  "schema": "protean.ledger-mirror.bootstrap-record.v1",
+  "recordId": "0x0fb7b323d4cdec3bdb571752fa332069e17a1a5ea0df2d7dc037ff7acd005427",
+  "recordType": "RuntimeCycle",
+  "recordTypeOrdinal": 1,
+  "title": "Mainnet activation cycle",
+  "summary": "Operational milestone: indexer published, explorer wiring committed, Bankr destination allow-list updated to include the Ledger proxy. Marks the transition from deployment to activation. No scientific claim.",
+  "author": "Protean Labs",
+  "runtimeId": "protean-mainnet-cycle-1",
+  "chainId": 8453,
+  "network": "base-mainnet",
+  "contractAddress": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "blockNumber": 46613020,
+  "txHash": "0x5d2a823dc1c9c6832fa3f676db75df6628bb816100456399025fe7eba7c6b07c",
+  "basescan": {
+    "tx": "https://basescan.org/tx/0x5d2a823dc1c9c6832fa3f676db75df6628bb816100456399025fe7eba7c6b07c"
+  },
+  "explorer": "https://www.protean.sh/ledger/record/0x0fb7b323d4cdec3bdb571752fa332069e17a1a5ea0df2d7dc037ff7acd005427",
+  "originalReplayPointer": "git:meltedmindz/protean-labs@main:out/deployments/base_mainnet_ledger.json#sha256:activation-cycle",
+  "bootstrap": {
+    "isBootstrapRecord": true,
+    "mirrorIntroducedAt": "post-activation (this mirror was created after this record was registered)",
+    "verificationStatus": {
+      "chainIdentity": "available",
+      "contentDigest": "available",
+      "lineage": "available — this record is a constituent of the launch package ScientificAsset via an AssetOf edge",
+      "publicArtifactSha256": "limited — replayPointer cites the private repo with placeholder anchor 'sha256:activation-cycle'",
+      "indexerReproduction": "available"
+    }
+  }
+}

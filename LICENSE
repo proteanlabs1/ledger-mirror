@@ -1,0 +1,8 @@
+CC0 1.0 Universal
+
+The verification artifacts (Markdown prose, JSON data, Mermaid
+diagrams) in this repository are released into the public domain
+under CC0-1.0. See https://creativecommons.org/publicdomain/zero/1.0/.
+
+The contract source code mirrored at contracts/ is MIT-licensed;
+see Basescan for the canonical license header.

@@ -1,0 +1,32 @@
+{
+  "schema": "protean.ledger-mirror.bootstrap-record.v1",
+  "recordId": "0xdcda8ebec2501afcd69041fd2269b07749e27c32d7b95f01776e473df05f4c57",
+  "recordType": "RuntimeCycle",
+  "recordTypeOrdinal": 1,
+  "title": "Protean Ledger mainnet genesis",
+  "summary": "Genesis runtime cycle anchored on Base mainnet. Marks deployment of the canonical ProteanLedger proxy at 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364, schema protean.ledger.v1. No scientific claim beyond deployment itself.",
+  "author": "Protean Labs",
+  "runtimeId": "protean-mainnet-genesis",
+  "chainId": 8453,
+  "network": "base-mainnet",
+  "contractAddress": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "blockNumber": 46612573,
+  "txHash": "0x114433acf94f1acb0deec54c2e8cd99a5b71d825119d2acb1ef5137805ed3368",
+  "basescan": {
+    "tx": "https://basescan.org/tx/0x114433acf94f1acb0deec54c2e8cd99a5b71d825119d2acb1ef5137805ed3368",
+    "contract": "https://basescan.org/address/0x2a6f84fa0a09b1c04f9edacccf6de58f11a4a364#code"
+  },
+  "explorer": "https://www.protean.sh/ledger/record/0xdcda8ebec2501afcd69041fd2269b07749e27c32d7b95f01776e473df05f4c57",
+  "originalReplayPointer": "git:meltedmindz/protean-labs@main:docs_internal/runbooks/ledger_mainnet_deploy.md#sha256:genesis",
+  "bootstrap": {
+    "isBootstrapRecord": true,
+    "mirrorIntroducedAt": "post-genesis (this mirror was created after this record was registered)",
+    "verificationStatus": {
+      "chainIdentity": "available — read getRecord(0xdcda…4c57) from any Base RPC",
+      "contentDigest": "available — recompute keccak256(abi.encode(envelope)) from the RecordContentEmitted event log",
+      "lineage": "available — walk EdgeLinked events with parent or child = recordId",
+      "publicArtifactSha256": "limited — the on-chain replayPointer cites the private Protean Labs repository with a placeholder sha256 anchor ('sha256:genesis'). This JSON artifact is an honest reconstruction made after the record was registered; its bytes do NOT match the on-chain placeholder anchor. We do not rewrite the on-chain record to fabricate parity.",
+      "indexerReproduction": "available — run scripts/index_ledger_from_genesis.py against any Base RPC; the canonical digest sha256:6049438bd0527c25270ce6cbd0e7bac7912a735e5e0e95ca65fc703910f747f6 reproduces"
+    }
+  }
+}

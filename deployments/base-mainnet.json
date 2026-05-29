@@ -1,0 +1,10 @@
+{
+  "basescanImplementationUrl": "https://basescan.org/address/0x212af224a03c3d2e9d07db7299b1b34affbfeb3d#code",
+  "basescanProxyUrl": "https://basescan.org/address/0x2a6f84fa0a09b1c04f9edacccf6de58f11a4a364#code",
+  "chainId": 8453,
+  "deployedAt": "2026-05-29T00:22:43.422000+00:00",
+  "deploymentBlock": 46612390,
+  "implementation": "0x212Af224A03c3d2e9D07Db7299b1b34affBfEB3D",
+  "proxy": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "schemaVersion": "protean.ledger.v1"
+}

@@ -1,0 +1,37 @@
+flowchart TB
+  subgraph chain["Base Mainnet"]
+    proxy["ERC1967Proxy\n0x2a6f84fA…a4a364"]
+    impl["ProteanLedger\n0x212Af224…fBeB3D"]
+    proxy --> impl
+  end
+
+  subgraph roles["Role topology"]
+    treasury(["Treasury\n0xbC67…7245\nDEFAULT_ADMIN + UPGRADER + PAUSER\n+ RETRACTOR + LINEAGE_REVOKER\n+ IP_DECLARANT"])
+    operator(["Operator\n0x827B…C2C7\nOPERATOR_WRITER + PAUSER\n+ LINEAGE_REVOKER + IP_DECLARANT"])
+    bankr(["Bankr\n0x074A…33DE\nAUTOMATION_WRITER only"])
+  end
+
+  treasury -.grants/revokes.-> proxy
+  treasury -.governance.-> proxy
+  operator -.daily writes.-> proxy
+  bankr   -.automated writes.-> proxy
+
+  subgraph offchain["Off-chain"]
+    indexer["Indexer\n(Python + TS)"]
+    db[("Postgres / SQLite")]
+    explorer["Explorer\nprotean.sh/ledger"]
+  end
+
+  proxy -- events --> indexer
+  indexer --> db
+  db --> explorer
+
+  explorer -- replayPointer --> mirror[("Public mirror\nproteanlabs1/ledger-mirror")]
+  mirror -- verifies artifacts --> explorer
+
+  classDef chain fill:#0f172a,stroke:#475569,color:#e2e8f0
+  classDef offchain fill:#1e293b,stroke:#475569,color:#e2e8f0
+  classDef role fill:#1e1b4b,stroke:#6366f1,color:#e0e7ff
+  class proxy,impl chain
+  class indexer,db,explorer,mirror offchain
+  class treasury,operator,bankr role

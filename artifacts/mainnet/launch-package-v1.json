@@ -1,0 +1,58 @@
+{
+  "schema": "protean.ledger-mirror.bootstrap-record.v1",
+  "recordId": "0x83542e023c23b56c8b68864e39918a9eee8dbfcc835f44cf23ef9326fc5e7e6d",
+  "recordType": "ScientificAsset",
+  "recordTypeOrdinal": 12,
+  "title": "Protean Ledger launch package v1.0",
+  "summary": "Citable aggregation of the three mainnet bootstrap records: the genesis runtime cycle, the activation milestone runtime cycle, and the reproducibility hypothesis. This asset is the canonical handle for the Protean Ledger launch. It will be superseded by future versions as the operational record grows.",
+  "author": "Protean Labs",
+  "runtimeId": "protean-mainnet-cycle-1",
+  "chainId": 8453,
+  "network": "base-mainnet",
+  "contractAddress": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "blockNumber": 46613044,
+  "txHash": "0xfa95dc3a38dccdd700847f5a51f1c35b6146b7baee298e4962305d6b8dc128f1",
+  "basescan": {
+    "tx": "https://basescan.org/tx/0xfa95dc3a38dccdd700847f5a51f1c35b6146b7baee298e4962305d6b8dc128f1"
+  },
+  "explorer": "https://www.protean.sh/ledger/record/0x83542e023c23b56c8b68864e39918a9eee8dbfcc835f44cf23ef9326fc5e7e6d",
+  "originalReplayPointer": "git:meltedmindz/protean-labs@main:docs_internal/architecture/protean_scientific_assets.md#sha256:launch-package-v1",
+  "publicationUrl": "https://www.protean.sh/ledger",
+  "constituents": [
+    {
+      "role": "genesis",
+      "recordId": "0xdcda8ebec2501afcd69041fd2269b07749e27c32d7b95f01776e473df05f4c57",
+      "relation": "AssetOf",
+      "edgeId": "0xda2d86aec5c81994…",
+      "artifact": "artifacts/mainnet/genesis.json"
+    },
+    {
+      "role": "activation cycle",
+      "recordId": "0x0fb7b323d4cdec3bdb571752fa332069e17a1a5ea0df2d7dc037ff7acd005427",
+      "relation": "AssetOf",
+      "edgeId": "0x9c9e7bf06e13341d…",
+      "artifact": "artifacts/mainnet/activation-cycle-1.json"
+    },
+    {
+      "role": "reproducibility hypothesis",
+      "recordId": "0x828fa1bd558cc7a55ff6762130c40ed1120f42cb28550fbf1df98b529e7b4ae0",
+      "relation": "AssetOf",
+      "edgeId": "0x9e0fa56a3463a17d…",
+      "artifact": "artifacts/mainnet/reproducibility-hypothesis.json"
+    }
+  ],
+  "openQuestions": [
+    "When does the next ScientificAsset register? (will supersede this v1.0)",
+    "Will the public mirror retain all four bootstrap artifacts or supersede them with v2 reconstructions?"
+  ],
+  "bootstrap": {
+    "isBootstrapRecord": true,
+    "verificationStatus": {
+      "chainIdentity": "available",
+      "contentDigest": "available",
+      "lineage": "available — three AssetOf edges into this record, all confirmed",
+      "publicArtifactSha256": "limited — replayPointer cites the private repo with placeholder anchor 'sha256:launch-package-v1'",
+      "indexerReproduction": "available"
+    }
+  }
+}
