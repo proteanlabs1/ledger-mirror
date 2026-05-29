@@ -21,7 +21,7 @@
   "verifiedBy": {
     "publishedDigest": "sha256:6049438bd0527c25270ce6cbd0e7bac7912a735e5e0e95ca65fc703910f747f6",
     "verifiedAtBlock": 46613079,
-    "verifiedAtBlockRange": "46612386..46613079 (the four bootstrap records)",
+    "verifiedAtBlockRange": "46612390..46613079 (the four bootstrap records)",
     "rpcEndpointUsedForVerification": "https://mainnet.base.org (public, no key)",
     "verificationDescription": "Fresh SQLite database, no Protean state on disk. Ran scripts/index_ledger_from_genesis.py from genesis. Digest reproduced byte-for-byte. Hypothesis verified by behavior immediately after registration; reverification possible at any time using the canonical script in this mirror."
   },

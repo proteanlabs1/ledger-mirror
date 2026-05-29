@@ -54,7 +54,7 @@ The freeze is irreversible. Once frozen, schema fixes happen via the bicameral "
 | Layer | Holds | Trust model |
 |---|---|---|
 | Base mainnet (this contract) | Plaintext core fields, recordId, contentDigest, lifecycle/disclosure state, supersession + retraction pointers | Cryptographic; permanent as long as Base L1 settles |
-| GitHub (this mirror) | Public-safe per-record JSON artifacts | Reachable as long as GitHub or any mirror keeps them |
+| GitHub (this mirror) | Public-safe per-record JSON artifacts and indexer code | Supplemental distribution; useful for artifact checks but not canonical |
 | The private Protean Labs repo | Research code, candidate sequences, Galen state, internal prompts | Not exposed; never published |
 
-The `replayPointer` field on each record points at the public artifact in this mirror. The sha256 anchor in the pointer commits to the artifact bytes. Anyone who can fetch the artifact at that commit can verify it has not been tampered with.
+The `replayPointer` field on each record can point at a public artifact in this mirror. The sha256 anchor in the pointer commits to the artifact bytes. Anyone who can fetch the artifact at that commit can verify it has not been tampered with, but the artifact is supplemental. If mirror content and chain events disagree, the chain and reproduced Digest win.

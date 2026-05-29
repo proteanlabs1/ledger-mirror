@@ -13,25 +13,29 @@ flowchart TB
 
   treasury -.grants/revokes.-> proxy
   treasury -.governance.-> proxy
-  operator -.daily writes.-> proxy
-  bankr   -.automated writes.-> proxy
+  galen(["Galen\nproposal only\nzero on-chain roles"])
+  approval(["Operator approval\nsingle-use token\nreview_record_id"])
+  galen --> approval --> bankr
+  operator -.approval + operational roles.-> approval
+  bankr   -.approved automated writes.-> proxy
 
   subgraph offchain["Off-chain"]
     indexer["Indexer\n(Python + TS)"]
     db[("Postgres / SQLite")]
+    digest["Digest\nsha256 canonical state"]
     explorer["Explorer\nprotean.sh/ledger"]
   end
 
   proxy -- events --> indexer
-  indexer --> db
+  indexer --> db --> digest
   db --> explorer
 
   explorer -- replayPointer --> mirror[("Public mirror\nproteanlabs1/ledger-mirror")]
-  mirror -- verifies artifacts --> explorer
+  mirror -- supplemental artifacts --> explorer
 
   classDef chain fill:#0f172a,stroke:#475569,color:#e2e8f0
   classDef offchain fill:#1e293b,stroke:#475569,color:#e2e8f0
   classDef role fill:#1e1b4b,stroke:#6366f1,color:#e0e7ff
   class proxy,impl chain
   class indexer,db,explorer,mirror offchain
-  class treasury,operator,bankr role
+  class treasury,operator,bankr,galen,approval role

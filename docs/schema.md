@@ -49,14 +49,14 @@ Reserved (documented, not enum-added): `LicensedTo`, `OwnedBy`, `WrappedBy`. See
 |---:|---|
 | 0 | `Draft` |
 | 1 | `ReviewReady` |
-| 2 | `ReviewInProgress` |
-| 3 | `Anchored` |
-| 4 | `Published` |
-| 5 | `Superseded` (terminal) |
-| 6 | `IPReview` |
-| 7 | `PatentFiled` |
-| 8 | `Disputed` (terminal) |
-| 9 | `Retired` (terminal) |
+| 2 | `Anchored` |
+| 3 | `AssayRequested` |
+| 4 | `AssayReturned` |
+| 5 | `IPReview` |
+| 6 | `PatentFiled` |
+| 7 | `Published` |
+| 8 | `Superseded` (terminal) |
+| 9 | `Disputed` (terminal) |
 
 ## DisclosureState (6)
 
@@ -72,12 +72,30 @@ Reserved (documented, not enum-added): `LicensedTo`, `OwnedBy`, `WrappedBy`. See
 ## Record identity
 
 ```
-recordId = keccak256(RECORD_DOMAIN || abi.encode(envelope))
+recordId = keccak256(
+  abi.encode(
+    RECORD_DOMAIN,
+    priorObjectId,
+    uint8(recordType),
+    uint8(lifecycleState),
+    uint8(disclosureState),
+    keccak256(bytes(title)),
+    keccak256(bytes(summary)),
+    keccak256(bytes(author)),
+    keccak256(bytes(runtimeId)),
+    keccak256(bytes(replayPointer)),
+    keccak256(bytes(publicationUrl)),
+    keccak256(abi.encode(references)),
+    supersedes,
+    retracts,
+    publishedAt
+  )
+)
 ```
 
 `RECORD_DOMAIN = keccak256("PROTEAN_LEDGER_RECORD_V1")`.
 
-The envelope is the `RecordInput` tuple. Pinned identity vector for the Thesis baseline (verified across Solidity + Python + TypeScript implementations):
+The identity vector is the `RecordInput` tuple after per-string hashing and references-list hashing, matching `contracts/ProteanLedger.sol`. Pinned identity vector for the Thesis baseline (verified across Solidity + Python + TypeScript implementations):
 
 ```
 0x3e11469568b613ae0f1741e06e9d4043f563430e15d2f5c2aff220d8a400cab6
@@ -88,12 +106,20 @@ Any change to enum ordering, field ordering, or `RECORD_DOMAIN` invalidates the 
 ## Edge identity
 
 ```
-edgeId = keccak256(EDGE_DOMAIN || parent || child || relation)
+edgeId = keccak256(
+  abi.encode(
+    EDGE_DOMAIN,
+    parentRecordId,
+    childRecordId,
+    uint8(relation),
+    evidenceHash
+  )
+)
 ```
 
 `EDGE_DOMAIN = keccak256("PROTEAN_LEDGER_EDGE_V1")`.
 
-Edges are content-addressed too; the same triple always produces the same edgeId, which is what makes the indexer's idempotent upserts safe.
+Edges are content-addressed too; the same `(parentRecordId, childRecordId, relation, evidenceHash)` always produces the same edgeId, which is what makes the indexer's idempotent upserts safe.
 
 ## Retraction timelock
 

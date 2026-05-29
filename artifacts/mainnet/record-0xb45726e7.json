@@ -3,12 +3,12 @@
   "recordId": "0xb45726e77fe07ae772309e322fbe2e5c0113969ad8a21701d6c6b49561657b1e",
   "recordType": "Hypothesis",
   "recordTypeOrdinal": 2,
-  "title": "Hypothesis \u00b7 structural:constraint-handles \u00b7 confidence=medium",
-  "summary": "Bounded scientific question over candidate group structural:constraint-handles. Selection: candidate has structural modification note, Cys pair, or high proline constraint; otherwise highest available structural signal. Anchored to runtime cycle cognition-45-1780070966 as a research signal; validation requires wet-lab assay return. Raw sequences stay in the operator vault.",
-  "author": "Protean Labs \u00b7 Galen",
+  "title": "Hypothesis · structural:constraint-handles · confidence=medium",
+  "summary": "Bounded scientific question over candidate group structural:constraint-handles. Selection: candidate has structural modification note, Cys pair, or high proline constraint; otherwise highest available structural signal. Linked to RuntimeCycle cognition-45-1780070966 as a research signal; validation requires wet-lab assay return. Raw sequences stay in the operator vault.",
+  "author": "Protean Labs · Galen",
   "runtimeId": "cognition-45-1780070966",
-  "lifecycleState": "Drafted",
-  "disclosureState": "Anchored",
+  "lifecycleState": "Draft",
+  "disclosureState": "RedactedPublic",
   "writer": "0x074abfb24d3fe2254672dc73f05c9696111033de",
   "chainId": 8453,
   "network": "base-mainnet",
@@ -35,8 +35,8 @@
   "verificationRecipe": {
     "step1_readFromChain": "cast call 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 \"getRecord(bytes32)\" 0xb45726e77fe07ae772309e322fbe2e5c0113969ad8a21701d6c6b49561657b1e --rpc-url https://mainnet.base.org",
     "step2_compareToIndexer": "curl -s 'https://www.protean.sh/ledger/api/v1/records/0xb45726e77fe07ae772309e322fbe2e5c0113969ad8a21701d6c6b49561657b1e' | jq .",
-    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
-    "step4_recomputeArtifact": "shasum -a 256 <this file> # compare to the sha256 carried in the on-chain replayPointer"
+    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --from-block 46612390 --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
+    "step4_recomputeArtifact": "supplemental only: shasum -a 256 <this file> # compare to the sha256 carried in replayPointer when it is not a placeholder"
   },
-  "_canonicalSha256": "sha256:d412d91c56dd6d47c4ae2164daed6c7493087dd58453193c6b5b97584dfbdccc"
+  "_canonicalSha256": "sha256:8cf486c13883e9f729d2e84b54bb908f07bd2296253131004bfac8add12133ad"
 }

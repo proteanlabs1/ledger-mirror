@@ -3,12 +3,12 @@
   "recordId": "0xf929615845000f6ce5c49ed67447630f54b95e0e70df9d88b08338716bc18e21",
   "recordType": "RuntimeCycle",
   "recordTypeOrdinal": 1,
-  "title": "RuntimeCycle \u00b7 cognition-45-1780070966",
-  "summary": "Autonomous cognition cycle produced by the Protean runtime. Anchors the cohort of hypotheses, experiments, and candidates evaluated in this cycle. Lineage edges are registered as subsequent EdgeLinked events.",
+  "title": "RuntimeCycle · cognition-45-1780070966",
+  "summary": "Operator-approved RuntimeCycle record produced by the bounded Protean runtime. The Ledger record links the cohort of hypotheses, experiments, and candidates evaluated in this cycle. Lineage edges are registered as subsequent EdgeLinked events.",
   "author": "Protean Labs",
   "runtimeId": "cognition-45-1780070966",
   "lifecycleState": "Published",
-  "disclosureState": "Anchored",
+  "disclosureState": "RedactedPublic",
   "writer": "0x074abfb24d3fe2254672dc73f05c9696111033de",
   "chainId": 8453,
   "network": "base-mainnet",
@@ -33,15 +33,15 @@
       {
         "childRecordId": "0xb45726e77fe07ae772309e322fbe2e5c0113969ad8a21701d6c6b49561657b1e",
         "relation": 11,
-        "description": "RuntimeCycle cognition-45-1780070966 anchors the cohort that produced this hypothesis."
+        "description": "RuntimeCycle cognition-45-1780070966 links the cohort that produced this hypothesis."
       }
     ]
   },
   "verificationRecipe": {
     "step1_readFromChain": "cast call 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 \"getRecord(bytes32)\" 0xf929615845000f6ce5c49ed67447630f54b95e0e70df9d88b08338716bc18e21 --rpc-url https://mainnet.base.org",
     "step2_compareToIndexer": "curl -s 'https://www.protean.sh/ledger/api/v1/records/0xf929615845000f6ce5c49ed67447630f54b95e0e70df9d88b08338716bc18e21' | jq .",
-    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
-    "step4_recomputeArtifact": "shasum -a 256 <this file> # compare to the sha256 carried in the on-chain replayPointer"
+    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --from-block 46612390 --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
+    "step4_recomputeArtifact": "supplemental only: shasum -a 256 <this file> # compare to the sha256 carried in replayPointer when it is not a placeholder"
   },
-  "_canonicalSha256": "sha256:8052f69a2df9596eaa306798722481d18410b5faec0a9ebc3e56ffd67a419160"
+  "_canonicalSha256": "sha256:4dfe57baa6f0b1cb4acfc05a29507ac0fa31f564596a3d9e24061b13b0af2d2a"
 }

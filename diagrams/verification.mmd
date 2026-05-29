@@ -18,16 +18,7 @@ sequenceDiagram
   R->>R: compare to contentDigest
   Note right of R: equal ✓ chain is honest
 
-  Note over R: Step 3 — replay artifact
-  R->>G: GET raw.githubusercontent.com/proteanlabs1/ledger-mirror<br/>@<commit>:artifacts/mainnet/&lt;id&gt;.json
-  G-->>R: JSON bytes
-
-  Note over R: Step 4 — sha256
-  R->>R: shasum -a 256
-  R->>R: compare to sha256: suffix in replayPointer
-  Note right of R: equal ✓ artifact not swapped
-
-  Note over R: Step 5 — independent re-index
+  Note over R: Step 3 — independent re-index
   R->>G: GET scripts/index_ledger_from_genesis.py
   G-->>R: Python script
   R->>RPC: eth_getLogs (all events from genesis)
@@ -37,3 +28,10 @@ sequenceDiagram
   R->>R: sha256(canonical_bytes(records sorted, edges sorted))
   R->>R: compare to https://www.protean.sh/ledger published digest
   Note right of R: equal ✓ full state reproduced
+
+  Note over R: Supplemental — replay artifact
+  R->>G: GET raw.githubusercontent.com/proteanlabs1/ledger-mirror<br/>@<commit>:artifacts/mainnet/&lt;id&gt;.json
+  G-->>R: JSON bytes
+  R->>R: shasum -a 256
+  R->>R: compare to sha256: suffix in replayPointer
+  Note right of R: equal ✓ supplemental artifact not swapped

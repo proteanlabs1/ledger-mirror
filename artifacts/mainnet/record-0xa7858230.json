@@ -3,12 +3,12 @@
   "recordId": "0xa7858230ccb9556d7dbd472044bbb0f2a73ecd632a342cb3e9fc824b6a20c564",
   "recordType": "Candidate",
   "recordTypeOrdinal": 5,
-  "title": "Candidate \u00b7 cycle-20260526T020837Z-02-001 \u00b7 rank=1",
+  "title": "Candidate · cycle-20260526T020837Z-02-001 · rank=1",
   "summary": "Top-ranked peptide candidate from runtime cycle cognition-45-1780070966. Generation method: deterministic_constraint_recombination. Confidence: medium. Sequence and salted commitment withheld; recovering the sequence from the on-chain content digest is unfeasible. Wet-lab assay validation is the authoritative downstream layer.",
-  "author": "Protean Labs \u00b7 Galen",
+  "author": "Protean Labs · Galen",
   "runtimeId": "cognition-45-1780070966",
-  "lifecycleState": "Drafted",
-  "disclosureState": "Internal",
+  "lifecycleState": "Draft",
+  "disclosureState": "PrivateCommitmentOnly",
   "writer": "0x074abfb24d3fe2254672dc73f05c9696111033de",
   "chainId": 8453,
   "network": "base-mainnet",
@@ -35,8 +35,8 @@
   "verificationRecipe": {
     "step1_readFromChain": "cast call 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 \"getRecord(bytes32)\" 0xa7858230ccb9556d7dbd472044bbb0f2a73ecd632a342cb3e9fc824b6a20c564 --rpc-url https://mainnet.base.org",
     "step2_compareToIndexer": "curl -s 'https://www.protean.sh/ledger/api/v1/records/0xa7858230ccb9556d7dbd472044bbb0f2a73ecd632a342cb3e9fc824b6a20c564' | jq .",
-    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
-    "step4_recomputeArtifact": "shasum -a 256 <this file> # compare to the sha256 carried in the on-chain replayPointer"
+    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --from-block 46612390 --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
+    "step4_recomputeArtifact": "supplemental only: shasum -a 256 <this file> # compare to the sha256 carried in replayPointer when it is not a placeholder"
   },
-  "_canonicalSha256": "sha256:8c70a20651553c4700d7a6e93e4b79efc49a677804c11e570cca49fafc5a69a5"
+  "_canonicalSha256": "sha256:9337b87a78704c61a747e26df32a760ee3750ee59c37c5b1a9d07bba351b11de"
 }

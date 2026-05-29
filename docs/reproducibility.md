@@ -23,13 +23,40 @@ The contract stores `contentDigest = keccak256(abi.encode(envelope))`. The `enve
 ```bash
 # Fetch the RecordContentEmitted log for this recordId:
 TOPIC0=0x7da545fcdedb56c3ad649b338af71c9a9195267ef123760e286463af4be71ee3
-cast logs --address $PROXY --from-block 46612386 \
+cast logs --address $PROXY --from-block 46612390 \
   --topic $TOPIC0 --topic $RECORD_ID --rpc-url $RPC
 ```
 
 Reconstruct the `RecordInput` tuple from the event payload + the indexed fields on `RecordRegistered`, ABI-encode, and `keccak256`. Compare to `contentDigest` from step 1. Equal → the chain is honest about what was registered.
 
-## Step 3 — Fetch the public replay artifact
+## Step 3 — Reproduce the Digest from chain events
+
+```bash
+# Get the canonical Python indexer
+curl -sL https://raw.githubusercontent.com/proteanlabs1/ledger-mirror/main/scripts/index_ledger_from_genesis.py \
+  -o index_ledger.py
+
+# Run against any Base mainnet RPC
+python3 index_ledger.py \
+  --rpc $RPC \
+  --proxy $PROXY \
+  --db /tmp/protean.db \
+  --from-block 46612390 \
+  --once
+
+# Compute the digest
+python3 index_ledger.py --digest-only --db /tmp/protean.db
+```
+
+The digest output should match the one served at https://www.protean.sh/ledger/api/v1/indexer/digest. If they match, you have just reproduced the entire ledger state from chain events using only a public RPC.
+
+Reference digest for the launch state (block range 46612390 -> 46613079, the four bootstrap records confirmed):
+
+```
+sha256:6049438bd0527c25270ce6cbd0e7bac7912a735e5e0e95ca65fc703910f747f6
+```
+
+## Step 4 — Fetch the supplemental replay artifact
 
 For records that postdate this mirror (the dated-after-genesis records), the `replayPointer` field has the form:
 
@@ -47,48 +74,21 @@ curl -sL "https://raw.githubusercontent.com/proteanlabs1/ledger-mirror/$COMMIT/$
 
 For the four bootstrap records (`genesis`, `activation-cycle-1`, `reproducibility-hypothesis`, `launch-package-v1`) the on-chain `replayPointer` uses a placeholder sha256 anchor and predates this mirror — the corresponding `artifacts/mainnet/*.json` files in this repo are honest reconstructions but do not match the placeholder anchor. The artifact files document this explicitly in their `bootstrap` field.
 
-## Step 4 — Recompute the replay sha256
+## Step 5 — Recompute the supplemental artifact sha256
 
 ```bash
 shasum -a 256 artifact.json
 ```
 
-Compare to the `sha256:<hex>` suffix in the `replayPointer`. Equal → the artifact at that commit is byte-identical to what the chain anchored.
+Compare to the `sha256:<hex>` suffix in the `replayPointer`. Equal -> the supplemental artifact at that commit is byte-identical to the pointer. The chain record and Digest remain the primary verification path.
 
 (For the four bootstrap records, expect a mismatch. Their content digests from step 2 still verify; the artifact-side anchor is the affected one.)
-
-## Step 5 — Run the indexer yourself
-
-```bash
-# Get the canonical Python indexer
-curl -sL https://raw.githubusercontent.com/proteanlabs1/ledger-mirror/main/scripts/index_ledger_from_genesis.py \
-  -o index_ledger.py
-
-# Run against any Base mainnet RPC
-python3 index_ledger.py \
-  --rpc $RPC \
-  --proxy $PROXY \
-  --db /tmp/protean.db \
-  --from-block 46612386 \
-  --once
-
-# Compute the digest
-python3 index_ledger.py --digest-only --db /tmp/protean.db
-```
-
-The digest output should match the one served at https://www.protean.sh/ledger/api/v1/indexer/digest. If they match, you have just reproduced the entire ledger state from chain events using only a public RPC.
-
-Reference digest for the launch state (block range 46612386 → 46613079, the four bootstrap records confirmed):
-
-```
-sha256:6049438bd0527c25270ce6cbd0e7bac7912a735e5e0e95ca65fc703910f747f6
-```
 
 ## What this proves
 
 - Step 1 + 2: the chain has not been rewritten between registration and your read.
-- Step 3 + 4: the public artifact mirror has not been swapped under you between commit and your fetch (for records that have a real anchor).
-- Step 5: the indexer state digest is a pure function of chain events. No Protean infrastructure is required to reach it.
+- Step 3: the indexer state digest is a pure function of chain events. No Protean infrastructure is required to reach it.
+- Step 4 + 5: the supplemental public artifact mirror has not been swapped under you between commit and your fetch (for records that have a real anchor).
 
 ## What you should NOT do
 
