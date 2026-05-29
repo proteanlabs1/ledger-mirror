@@ -1,0 +1,42 @@
+{
+  "schema": "protean.ledger-mirror.record.v1",
+  "recordId": "0xa7858230ccb9556d7dbd472044bbb0f2a73ecd632a342cb3e9fc824b6a20c564",
+  "recordType": "Candidate",
+  "recordTypeOrdinal": 5,
+  "title": "Candidate \u00b7 cycle-20260526T020837Z-02-001 \u00b7 rank=1",
+  "summary": "Top-ranked peptide candidate from runtime cycle cognition-45-1780070966. Generation method: deterministic_constraint_recombination. Confidence: medium. Sequence and salted commitment withheld; recovering the sequence from the on-chain content digest is unfeasible. Wet-lab assay validation is the authoritative downstream layer.",
+  "author": "Protean Labs \u00b7 Galen",
+  "runtimeId": "cognition-45-1780070966",
+  "lifecycleState": "Draft",
+  "disclosureState": "PrivateCommitmentOnly",
+  "writer": "0x074abfb24d3fe2254672dc73f05c9696111033de",
+  "chainId": 8453,
+  "network": "base-mainnet",
+  "contractAddress": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "blockNumber": 46641857,
+  "txHash": "0x88bcd99381023899e6aa91e642c4799311897dde195ba3426de56c8080f8d698",
+  "basescan": {
+    "tx": "https://basescan.org/tx/0x88bcd99381023899e6aa91e642c4799311897dde195ba3426de56c8080f8d698",
+    "block": "https://basescan.org/block/46641857",
+    "contract": "https://basescan.org/address/0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364#code"
+  },
+  "explorer": "https://www.protean.sh/ledger/record/0xa7858230ccb9556d7dbd472044bbb0f2a73ecd632a342cb3e9fc824b6a20c564",
+  "originalReplayPointer": "git:proteanlabs1/ledger-mirror@main:artifacts/mainnet/record-cognition-45-1780070966-candidate-Z-02-001.json#sha256:pending",
+  "lineage": {
+    "parentEdges": [
+      {
+        "parentRecordId": "0xf929615845000f6ce5c49ed67447630f54b95e0e70df9d88b08338716bc18e21",
+        "relation": 8,
+        "description": "RuntimeCycle cognition-45-1780070966 produced this candidate via deterministic constrained recombination."
+      }
+    ],
+    "childEdges": []
+  },
+  "verificationRecipe": {
+    "step1_readFromChain": "cast call 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 \"getRecord(bytes32)\" 0xa7858230ccb9556d7dbd472044bbb0f2a73ecd632a342cb3e9fc824b6a20c564 --rpc-url https://mainnet.base.org",
+    "step2_compareToIndexer": "curl -s 'https://www.protean.sh/ledger/api/v1/records/0xa7858230ccb9556d7dbd472044bbb0f2a73ecd632a342cb3e9fc824b6a20c564' | jq .",
+    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
+    "step4_recomputeArtifact": "shasum -a 256 <this file> # compare to the sha256 carried in the on-chain replayPointer"
+  },
+  "_canonicalSha256": "sha256:7d05bc44b31d7e6b7524bbddbbf8326148d38539fd18a9734c4b6df5048203bf"
+}

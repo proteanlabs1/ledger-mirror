@@ -1,0 +1,47 @@
+{
+  "schema": "protean.ledger-mirror.record.v1",
+  "recordId": "0xf929615845000f6ce5c49ed67447630f54b95e0e70df9d88b08338716bc18e21",
+  "recordType": "RuntimeCycle",
+  "recordTypeOrdinal": 1,
+  "title": "RuntimeCycle \u00b7 cognition-45-1780070966",
+  "summary": "Autonomous cognition cycle produced by the Protean runtime. Anchors the cohort of hypotheses, experiments, and candidates evaluated in this cycle. Lineage edges are registered as subsequent EdgeLinked events.",
+  "author": "Protean Labs",
+  "runtimeId": "cognition-45-1780070966",
+  "lifecycleState": "Anchored",
+  "disclosureState": "RedactedPublic",
+  "writer": "0x074abfb24d3fe2254672dc73f05c9696111033de",
+  "chainId": 8453,
+  "network": "base-mainnet",
+  "contractAddress": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "blockNumber": 46641855,
+  "txHash": "0xb214ea537a5a28263e650dab585d4338d891d1a6350010a9133591280e41b2e6",
+  "basescan": {
+    "tx": "https://basescan.org/tx/0xb214ea537a5a28263e650dab585d4338d891d1a6350010a9133591280e41b2e6",
+    "block": "https://basescan.org/block/46641855",
+    "contract": "https://basescan.org/address/0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364#code"
+  },
+  "explorer": "https://www.protean.sh/ledger/record/0xf929615845000f6ce5c49ed67447630f54b95e0e70df9d88b08338716bc18e21",
+  "originalReplayPointer": "git:proteanlabs1/ledger-mirror@main:artifacts/mainnet/record-cognition-45-1780070966.json#sha256:pending",
+  "lineage": {
+    "parentEdges": [],
+    "childEdges": [
+      {
+        "childRecordId": "0xa7858230ccb9556d7dbd472044bbb0f2a73ecd632a342cb3e9fc824b6a20c564",
+        "relation": 8,
+        "description": "RuntimeCycle cognition-45-1780070966 produced this candidate via deterministic constrained recombination."
+      },
+      {
+        "childRecordId": "0xb45726e77fe07ae772309e322fbe2e5c0113969ad8a21701d6c6b49561657b1e",
+        "relation": 11,
+        "description": "RuntimeCycle cognition-45-1780070966 anchors the cohort that produced this hypothesis."
+      }
+    ]
+  },
+  "verificationRecipe": {
+    "step1_readFromChain": "cast call 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 \"getRecord(bytes32)\" 0xf929615845000f6ce5c49ed67447630f54b95e0e70df9d88b08338716bc18e21 --rpc-url https://mainnet.base.org",
+    "step2_compareToIndexer": "curl -s 'https://www.protean.sh/ledger/api/v1/records/0xf929615845000f6ce5c49ed67447630f54b95e0e70df9d88b08338716bc18e21' | jq .",
+    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
+    "step4_recomputeArtifact": "shasum -a 256 <this file> # compare to the sha256 carried in the on-chain replayPointer"
+  },
+  "_canonicalSha256": "sha256:c4e29363eaf8957caf8ce104daf1c2c25f76b490fca89f878710f8bf7695355d"
+}

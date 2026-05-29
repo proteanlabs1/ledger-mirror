@@ -1,5 +1,5 @@
 {
-  "fileCount": 21,
+  "fileCount": 24,
   "files": [
     {
       "path": "LICENSE",
@@ -45,6 +45,21 @@
       "path": "artifacts/mainnet/record-0xf9296158.json",
       "sha256": "sha256:aee4c4dea2063cd98080ea2403ffd599289152a5d0f3e743912de2ad93249abf",
       "size_bytes": 2968
+    },
+    {
+      "path": "artifacts/mainnet/record-cognition-45-1780070966-Candidate.json",
+      "sha256": "sha256:981f3c52141cc1d1aa6f44a04bbdff5a85a0f471ebff418405e856bbc79220ab",
+      "size_bytes": 2804
+    },
+    {
+      "path": "artifacts/mainnet/record-cognition-45-1780070966-Hypothesis.json",
+      "sha256": "sha256:1a22a4eec7f83104424a82a6738c0ae4ea02fb06f1a1db0389145d7b963478fc",
+      "size_bytes": 2831
+    },
+    {
+      "path": "artifacts/mainnet/record-cognition-45-1780070966-RuntimeCycle.json",
+      "sha256": "sha256:870d2554b4432f78fefb353eb0e9229a11f0feea4b83f5d750f92b0ca0e0ca94",
+      "size_bytes": 2881
     },
     {
       "path": "artifacts/mainnet/reproducibility-hypothesis.json",
@@ -107,7 +122,7 @@
       "size_bytes": 27486
     }
   ],
-  "generatedAt": "2026-05-29T17:50:59.081478+00:00",
+  "generatedAt": "2026-05-29T18:01:58.617970+00:00",
   "schema": "protean.ledger-mirror.manifest.v1",
-  "sourceRepoCommit": "696cc7dba7c31433911dedeab615d34b074b6ea5"
+  "sourceRepoCommit": "e56ae0cd8acfc67d7e16eee0d297384a4692cfd5"
 }
