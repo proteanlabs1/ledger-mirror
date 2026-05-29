@@ -1,0 +1,10 @@
+{
+  "commitmentSha": "sha256:3fd8684d7bc71cf818a080fab89433f859bff5f92350b3fd40f461db60d2ccdc",
+  "cycleId": "cognition-47-1780078608",
+  "explorerUrl": "https://www.protean.sh/ledger/record/0x5042e84b914f00a570f95999b05b8fe6964c89f9597242ccf078a1fe12432d59",
+  "kind": "Hypothesis",
+  "observedAtUnix": 1780078781.927655,
+  "recordId": "0x5042e84b914f00a570f95999b05b8fe6964c89f9597242ccf078a1fe12432d59",
+  "schema": "protean.ledger-mirror.receipt.v1",
+  "txHash": "0xb9f8b925bbea067081e206bc0307083935d5eb99543df31f573f5a9e77c37eb8"
+}
