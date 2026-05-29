@@ -1,5 +1,5 @@
 {
-  "fileCount": 17,
+  "fileCount": 18,
   "files": [
     {
       "path": "LICENSE",
@@ -25,6 +25,11 @@
       "path": "artifacts/mainnet/launch-package-v1.json",
       "sha256": "sha256:17c7fbfce34ed45bac649ee14d7cfea35e014b81939f119cbdd1d618b420b554",
       "size_bytes": 2766
+    },
+    {
+      "path": "artifacts/mainnet/record-0xd6fd7610.json",
+      "sha256": "sha256:1e24527ef77927e1539b0ac4c25d6096956c5e32ac21f0854a0b9a99408f3bf6",
+      "size_bytes": 2356
     },
     {
       "path": "artifacts/mainnet/reproducibility-hypothesis.json",
@@ -87,7 +92,7 @@
       "size_bytes": 27486
     }
   ],
-  "generatedAt": "2026-05-29T04:53:32.472880+00:00",
+  "generatedAt": "2026-05-29T16:23:33.804154+00:00",
   "schema": "protean.ledger-mirror.manifest.v1",
-  "sourceRepoCommit": "ff3251f782a2fe807cf88a8d8a303e918cecbeab"
+  "sourceRepoCommit": "b2594d551fa41d87b1fd4653e1b4283e83ca697d"
 }
