@@ -1,5 +1,5 @@
 {
-  "fileCount": 30,
+  "fileCount": 31,
   "files": [
     {
       "path": "LICENSE",
@@ -92,6 +92,11 @@
       "size_bytes": 540
     },
     {
+      "path": "artifacts/mainnet/record-cycle-20260526T020837Z-02-001-ScientificAsset.json",
+      "sha256": "sha256:6df429ff4bb91634865e62347593e521f056cfbee87bb0b66dafaba6b9479745",
+      "size_bytes": 2949
+    },
+    {
       "path": "artifacts/mainnet/reproducibility-hypothesis.json",
       "sha256": "sha256:ceaf26d1073e23ce73105a2aca04dbc9f49976962ad57bb8699b6efeb3ba2c3d",
       "size_bytes": 2815
@@ -152,7 +157,7 @@
       "size_bytes": 27486
     }
   ],
-  "generatedAt": "2026-06-01T04:21:30.150754+00:00",
+  "generatedAt": "2026-06-01T18:29:41.823537+00:00",
   "schema": "protean.ledger-mirror.manifest.v1",
-  "sourceRepoCommit": "08330dd51017e580ad7668dfcd1432ec12c5ffaa"
+  "sourceRepoCommit": "3c460e607ec32318f7e77d4815a166b8cc4ce7cd"
 }

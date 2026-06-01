@@ -1,0 +1,42 @@
+{
+  "schema": "protean.ledger-mirror.record.v1",
+  "recordId": "0xc4b1af0b6170c14556aa4753190c402fb6a7619030ea5bd434b7992d7906b628",
+  "recordType": "ScientificAsset",
+  "recordTypeOrdinal": 12,
+  "title": "Candidate Dossier Artifact - cycle-20260526T020837Z-02-001 - protean-dossier-v1 - PDF CID verified",
+  "summary": "Verified Protean candidate dossier artifact. The PDF CID was retrieved through the Pinata gateway and hash-verified against the approved local dossier.pdf. Folder-root HTML gateway rendering is advisory gateway policy behavior, not an IPFS publication failure. This record supersedes the prior anchor to clarify that IPFS publication succeeded with the PDF CID as the integrity-bearing artifact. Provenance anchor only; no biological validation, efficacy, safety, therapeutic utility, wet-lab submission, or IP waiver is claimed.",
+  "author": "Protean Labs - Galen",
+  "runtimeId": "cycle-20260526T020837Z-02-001",
+  "lifecycleState": "Anchored",
+  "disclosureState": "Public",
+  "writer": "0x074abfb24d3fe2254672dc73f05c9696111033de",
+  "chainId": 8453,
+  "network": "base-mainnet",
+  "contractAddress": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "blockNumber": 46774155,
+  "txHash": "0x4d1e526f2699b49144b2c81756f0ed5770394ca025802dce6d823ad95d71be37",
+  "basescan": {
+    "tx": "https://basescan.org/tx/0x4d1e526f2699b49144b2c81756f0ed5770394ca025802dce6d823ad95d71be37",
+    "block": "https://basescan.org/block/46774155",
+    "contract": "https://basescan.org/address/0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364#code"
+  },
+  "explorer": "https://www.protean.sh/ledger/record/0xc4b1af0b6170c14556aa4753190c402fb6a7619030ea5bd434b7992d7906b628",
+  "originalReplayPointer": "ipfs://bafybeicv3szml5mptrql5kyhnh5lbtrulxk2rgdjt5ndsdwyodlf7hpvse#sha256:d9f865c311b0a3cf876d282f92b063c0242e5f7b7fbcda1de093b6f9b0a6aeaa",
+  "lineage": {
+    "parentEdges": [
+      {
+        "parentRecordId": "0xd1cf1efabf711216e62b0a9fcc1a28f9565eccf9cfac13a3e46e3c8da2d4546b",
+        "relation": 5,
+        "description": ""
+      }
+    ],
+    "childEdges": []
+  },
+  "verificationRecipe": {
+    "step1_readFromChain": "cast call 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 \"getRecord(bytes32)\" 0xc4b1af0b6170c14556aa4753190c402fb6a7619030ea5bd434b7992d7906b628 --rpc-url https://mainnet.base.org",
+    "step2_compareToIndexer": "curl -s 'https://www.protean.sh/ledger/api/v1/records/0xc4b1af0b6170c14556aa4753190c402fb6a7619030ea5bd434b7992d7906b628' | jq .",
+    "step3_reproduceDigest": "scripts/index_ledger_from_genesis.py --rpc https://mainnet.base.org --proxy 0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364 --db /tmp/protean.db --once && scripts/index_ledger_from_genesis.py --digest-only --db /tmp/protean.db",
+    "step4_recomputeArtifact": "shasum -a 256 <this file> # compare to the sha256 carried in the on-chain replayPointer"
+  },
+  "_canonicalSha256": "sha256:65266496eb97405d5af48bc4de66871435553a97f39a7edb7b24a519dd88f5b3"
+}
