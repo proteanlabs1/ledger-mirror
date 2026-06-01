@@ -55,6 +55,9 @@ The freeze is irreversible. Once frozen, schema fixes happen via the bicameral "
 |---|---|---|
 | Base mainnet (this contract) | Plaintext core fields, recordId, contentDigest, lifecycle/disclosure state, supersession + retraction pointers | Cryptographic; permanent as long as Base L1 settles |
 | GitHub (this mirror) | Public-safe per-record JSON artifacts and indexer code | Supplemental distribution; useful for artifact checks but not canonical |
+| gitlawb mirror | The same approved public, review-safe mirror subset | Required decentralized replication rail; never canonical |
 | The private Protean Labs repo | Research code, candidate sequences, Galen state, internal prompts | Not exposed; never published |
 
 The `replayPointer` field on each record can point at a public artifact in this mirror. The sha256 anchor in the pointer commits to the artifact bytes. Anyone who can fetch the artifact at that commit can verify it has not been tampered with, but the artifact is supplemental. If mirror content and chain events disagree, the chain and reproduced Digest win.
+
+The gitlawb rail is enabled by default for approved public ledger artifacts and uses the same public-safety posture as the GitHub mirror. Raw assay-preparation handoffs, unreviewed claims, provider packets, secrets, private keys, operator notes, private material, and sensitive wet-lab coordination data are not eligible for automatic push. A gitlawb outage records degraded mirror status and does not change canonical ledger truth.

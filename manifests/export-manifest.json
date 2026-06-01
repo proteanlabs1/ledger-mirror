@@ -118,8 +118,8 @@
     },
     {
       "path": "docs/architecture.md",
-      "sha256": "sha256:6951004cf3e4811f8701f4812ae1fca07a8d414fe5e064308f4f50438e059f27",
-      "size_bytes": 3249
+      "sha256": "sha256:d75ad256858dc9c9cd7aeb04280407f5a74b38a05c3f48b74db88a069bde7811",
+      "size_bytes": 3815
     },
     {
       "path": "docs/events.md",
@@ -152,7 +152,7 @@
       "size_bytes": 27486
     }
   ],
-  "generatedAt": "2026-05-29T18:19:59.741885+00:00",
+  "generatedAt": "2026-06-01T04:21:30.150754+00:00",
   "schema": "protean.ledger-mirror.manifest.v1",
-  "sourceRepoCommit": "19308a76c5124448087cca8b0407212a45c1a323"
+  "sourceRepoCommit": "08330dd51017e580ad7668dfcd1432ec12c5ffaa"
 }
