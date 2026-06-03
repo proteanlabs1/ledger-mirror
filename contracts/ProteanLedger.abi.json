@@ -110,6 +110,32 @@
   },
   {
     "type": "function",
+    "name": "MAX_OPERATOR_SIGNATURE_LEN",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "MAX_PUBLICATION_REFERENCE_LEN",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "MAX_PUBLICATION_URL_LEN",
     "inputs": [],
     "outputs": [
@@ -188,6 +214,19 @@
   },
   {
     "type": "function",
+    "name": "MAX_SEQUENCE_LEN",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "MAX_SUMMARY_LEN",
     "inputs": [],
     "outputs": [
@@ -234,6 +273,19 @@
         "name": "",
         "type": "bytes32",
         "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "PUBLICATION_ATTESTATION_SCHEMA",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
       }
     ],
     "stateMutability": "view"
@@ -318,6 +370,199 @@
   },
   {
     "type": "function",
+    "name": "attestPublication",
+    "inputs": [
+      {
+        "name": "input",
+        "type": "tuple",
+        "internalType": "struct ProteanLedger.RecordInput",
+        "components": [
+          {
+            "name": "priorObjectId",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "recordType",
+            "type": "uint8",
+            "internalType": "enum ProteanLedger.RecordType"
+          },
+          {
+            "name": "lifecycleState",
+            "type": "uint8",
+            "internalType": "enum ProteanLedger.LifecycleState"
+          },
+          {
+            "name": "disclosureState",
+            "type": "uint8",
+            "internalType": "enum ProteanLedger.DisclosureState"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "summary",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "author",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "runtimeId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "replayPointer",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "publicationUrl",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "references",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "supersedes",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "retracts",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "publishedAt",
+            "type": "uint64",
+            "internalType": "uint64"
+          }
+        ]
+      },
+      {
+        "name": "attestation",
+        "type": "tuple",
+        "internalType": "struct ProteanLedger.PublicationAttestationInput",
+        "components": [
+          {
+            "name": "fullSequence",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "candidateId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "familyId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "parentCandidateIds",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "childCandidateIds",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "lineageReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "generationRunId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "provenanceHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "dossierHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "archiveHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "timestamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "operatorAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "operatorSignature",
+            "type": "bytes",
+            "internalType": "bytes"
+          },
+          {
+            "name": "repositoryReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "publicationReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "schemaVersion",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "contentUri",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "lineageUri",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "provenanceBundleUri",
+            "type": "string",
+            "internalType": "string"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "recordId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "cancelRetraction",
     "inputs": [
       {
@@ -352,6 +597,122 @@
         "name": "evidenceHash",
         "type": "bytes32",
         "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "computePublicationAttestationDigest",
+    "inputs": [
+      {
+        "name": "input",
+        "type": "tuple",
+        "internalType": "struct ProteanLedger.PublicationAttestationInput",
+        "components": [
+          {
+            "name": "fullSequence",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "candidateId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "familyId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "parentCandidateIds",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "childCandidateIds",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "lineageReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "generationRunId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "provenanceHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "dossierHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "archiveHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "timestamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "operatorAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "operatorSignature",
+            "type": "bytes",
+            "internalType": "bytes"
+          },
+          {
+            "name": "repositoryReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "publicationReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "schemaVersion",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "contentUri",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "lineageUri",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "provenanceBundleUri",
+            "type": "string",
+            "internalType": "string"
+          }
+        ]
       }
     ],
     "outputs": [
@@ -528,6 +889,132 @@
             "name": "createdBlock",
             "type": "uint32",
             "internalType": "uint32"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPublicationAttestation",
+    "inputs": [
+      {
+        "name": "recordId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct ProteanLedger.PublicationAttestation",
+        "components": [
+          {
+            "name": "recordId",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "fullSequence",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "candidateId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "familyId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "parentCandidateIds",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "childCandidateIds",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "lineageReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "generationRunId",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "provenanceHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "dossierHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "archiveHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "timestamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "operatorAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "operatorSignature",
+            "type": "bytes",
+            "internalType": "bytes"
+          },
+          {
+            "name": "repositoryReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "publicationReferences",
+            "type": "string[]",
+            "internalType": "string[]"
+          },
+          {
+            "name": "schemaVersion",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "contentUri",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "lineageUri",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "provenanceBundleUri",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "exists",
+            "type": "bool",
+            "internalType": "bool"
           }
         ]
       }
@@ -927,6 +1414,25 @@
         "name": "",
         "type": "bytes32",
         "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "publicationAttestationExists",
+    "inputs": [
+      {
+        "name": "recordId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
       }
     ],
     "stateMutability": "view"
@@ -1529,6 +2035,177 @@
   },
   {
     "type": "event",
+    "name": "PublicationAttestationHashes",
+    "inputs": [
+      {
+        "name": "recordId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "provenanceHash",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "dossierHash",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "archiveHash",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "operatorSignature",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      },
+      {
+        "name": "contentUri",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "lineageUri",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "provenanceBundleUri",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PublicationAttestationReferences",
+    "inputs": [
+      {
+        "name": "recordId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "parentCandidateIds",
+        "type": "string[]",
+        "indexed": false,
+        "internalType": "string[]"
+      },
+      {
+        "name": "childCandidateIds",
+        "type": "string[]",
+        "indexed": false,
+        "internalType": "string[]"
+      },
+      {
+        "name": "lineageReferences",
+        "type": "string[]",
+        "indexed": false,
+        "internalType": "string[]"
+      },
+      {
+        "name": "repositoryReferences",
+        "type": "string[]",
+        "indexed": false,
+        "internalType": "string[]"
+      },
+      {
+        "name": "publicationReferences",
+        "type": "string[]",
+        "indexed": false,
+        "internalType": "string[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PublicationAttested",
+    "inputs": [
+      {
+        "name": "recordId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "recordType",
+        "type": "uint8",
+        "indexed": true,
+        "internalType": "enum ProteanLedger.RecordType"
+      },
+      {
+        "name": "writer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "candidateId",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "familyId",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "fullSequence",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "generationRunId",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      },
+      {
+        "name": "operatorAddress",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "schemaVersion",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "attestationDigest",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
     "name": "RecordContentEmitted",
     "inputs": [
       {
@@ -1988,6 +2665,11 @@
   },
   {
     "type": "error",
+    "name": "InvalidPublicationAttestation",
+    "inputs": []
+  },
+  {
+    "type": "error",
     "name": "InvalidRecordType",
     "inputs": []
   },
@@ -2008,6 +2690,11 @@
   },
   {
     "type": "error",
+    "name": "OperatorSignatureTooLong",
+    "inputs": []
+  },
+  {
+    "type": "error",
     "name": "Paused",
     "inputs": []
   },
@@ -2021,6 +2708,33 @@
         "internalType": "bytes32"
       }
     ]
+  },
+  {
+    "type": "error",
+    "name": "PublicationAttestationAlreadyExists",
+    "inputs": [
+      {
+        "name": "recordId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "PublicationAttestationNotFound",
+    "inputs": [
+      {
+        "name": "recordId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "PublicationReferenceTooLong",
+    "inputs": []
   },
   {
     "type": "error",
@@ -2116,6 +2830,16 @@
   {
     "type": "error",
     "name": "SelfEdgeForbidden",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "SequenceRequired",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "SequenceTooLong",
     "inputs": []
   },
   {

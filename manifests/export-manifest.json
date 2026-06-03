@@ -8,8 +8,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "sha256:65283d6db962750da163f1c6ec19ec9c713fbcbef20c4086ffdb151956cad340",
-      "size_bytes": 4316
+      "sha256": "sha256:8a23b11a6c7e2ee4d0f70111008ad2c50a02fb318d459fd4776d0855b634d2d5",
+      "size_bytes": 4442
     },
     {
       "path": "artifacts/mainnet/activation-cycle-1.json",
@@ -103,18 +103,18 @@
     },
     {
       "path": "contracts/ProteanLedger.abi.json",
-      "sha256": "sha256:df70be041e30ea30b511469be099245c31d2e1ebba836d94c493688f06157dfb",
-      "size_bytes": 43386
+      "sha256": "sha256:3ce8f79ed92bf5db8a3cacd145e1106807f116aa290c90a4321d0557a6074d7d",
+      "size_bytes": 60366
     },
     {
       "path": "deployments/base-mainnet.json",
-      "sha256": "sha256:ead7558ea9ff1b73c033602f092e9de1cfc137b2df5b75c29ccca879426953b5",
-      "size_bytes": 480
+      "sha256": "sha256:a1fc69037eab4fcf5124e2f05d67f748bf9d7f7dc157445f83f949843b873342",
+      "size_bytes": 991
     },
     {
       "path": "diagrams/architecture.mmd",
-      "sha256": "sha256:1b1434ed6c06d33dab691b7a00382d619da3ae1cc4703e40693051722917b276",
-      "size_bytes": 1530
+      "sha256": "sha256:9847f3795d4210583230bbda749e7322def1e4d9c2443c2ecc4b1b0e80b87f6d",
+      "size_bytes": 1532
     },
     {
       "path": "diagrams/verification.mmd",
@@ -123,13 +123,13 @@
     },
     {
       "path": "docs/architecture.md",
-      "sha256": "sha256:d75ad256858dc9c9cd7aeb04280407f5a74b38a05c3f48b74db88a069bde7811",
-      "size_bytes": 3815
+      "sha256": "sha256:969b7002fbed719e4663a36e3f213883daaf95532e12db0155f14cc64be94501",
+      "size_bytes": 4101
     },
     {
       "path": "docs/events.md",
-      "sha256": "sha256:62d339a1091da8f9407ed8d25cdd75610c87f802c6d0fd4c14c31ffd915d41a9",
-      "size_bytes": 4147
+      "sha256": "sha256:a14344df018cefe6490ee5fe070a8d643b835c09b221e36ebdc24fc3c40396ee",
+      "size_bytes": 5856
     },
     {
       "path": "docs/provenance.md",
@@ -138,18 +138,18 @@
     },
     {
       "path": "docs/reproducibility.md",
-      "sha256": "sha256:7cb9b7839fd6d6917ebc5c1f6fbdb0f9770c6744fcd320faf48479a5260dc38e",
+      "sha256": "sha256:66fe2e42fd2e5ccdcf7e89511adcbbe70a10012b1d90aa985a6d6fef8cf00f36",
       "size_bytes": 4718
     },
     {
       "path": "docs/roles.md",
-      "sha256": "sha256:7d542f20108517c550b93c36b05451e4058c91c5f76a68a6d85533f01803b2e7",
+      "sha256": "sha256:25762d3640a105d1ff9425d22af7960d6b10300e2eae68a449af6b14d05728ca",
       "size_bytes": 2917
     },
     {
       "path": "docs/schema.md",
-      "sha256": "sha256:389afe9c0b39fc7def45946c210a90a12a90a4fe9d0db8b783d889d0a99b27c8",
-      "size_bytes": 3790
+      "sha256": "sha256:3e3dbcaf8abf7c3f9953cbf2e8991afeae0d2e721230a595a56f36406081f132",
+      "size_bytes": 4132
     },
     {
       "path": "scripts/index_ledger_from_genesis.py",
@@ -157,7 +157,7 @@
       "size_bytes": 27486
     }
   ],
-  "generatedAt": "2026-06-01T18:29:41.823537+00:00",
+  "generatedAt": "2026-06-03T05:33:18.410634+00:00",
   "schema": "protean.ledger-mirror.manifest.v1",
-  "sourceRepoCommit": "3c460e607ec32318f7e77d4815a166b8cc4ce7cd"
+  "sourceRepoCommit": "e5d4a927fee6f6df47cabee15dda897095184d97"
 }

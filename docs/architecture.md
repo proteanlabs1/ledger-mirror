@@ -5,10 +5,10 @@ UUPS proxy on Base mainnet. Single implementation. Eight roles enforce separatio
 ## Contracts
 
 ```
-ERC1967Proxy (0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364)
+ERC1967Proxy (0xE3c261F3C05D4c4710003cd6066EfD95094cf5f0)
    │  delegatecall via implementation slot
    ▼
-ProteanLedger (0x212Af224A03c3d2e9D07Db7299b1b34affBfEB3D)
+ProteanLedger (0xf343dC86b186D2A1C7A052252D150672308854c4)
    • Initializable
    • AccessControlUpgradeable
    • UUPSUpgradeable
@@ -25,7 +25,8 @@ slot 2   : _edges             (mapping)
 slot 3   : _supersededBy      (mapping)
 slot 4   : _retractedRecords  (mapping)
 slot 5   : _retractionProposals (mapping)
-slot 6–47: __gap[42] (reserved for additive fields)
+slot 6   : _publicationAttestations (mapping)
+slot 7–47: __gap[41] (reserved for additive fields)
 ```
 
 Storage gap is conventional OpenZeppelin form; additive fields take from the gap before the gap shrinks.
@@ -53,11 +54,11 @@ The freeze is irreversible. Once frozen, schema fixes happen via the bicameral "
 
 | Layer | Holds | Trust model |
 |---|---|---|
-| Base mainnet (this contract) | Plaintext core fields, recordId, contentDigest, lifecycle/disclosure state, supersession + retraction pointers | Cryptographic; permanent as long as Base L1 settles |
-| GitHub (this mirror) | Public-safe per-record JSON artifacts and indexer code | Supplemental distribution; useful for artifact checks but not canonical |
+| Base mainnet (this contract) | Plaintext core fields, recordId, contentDigest, lifecycle/disclosure state, supersession + retraction pointers, full-sequence publication attestations, candidate/family lineage references | Cryptographic; permanent as long as Base L1 settles |
+| GitHub (this mirror) | Public-safe per-record JSON artifacts, published full sequences, and indexer code | Supplemental distribution; useful for artifact checks but not canonical |
 | gitlawb mirror | The same approved public, review-safe mirror subset | Required decentralized replication rail; never canonical |
-| The private Protean Labs repo | Research code, candidate sequences, Galen state, internal prompts | Not exposed; never published |
+| The private Protean Labs repo | Research code, unpublished candidate sequences, Galen state, internal prompts | Private by default unless a candidate or family is intentionally published |
 
 The `replayPointer` field on each record can point at a public artifact in this mirror. The sha256 anchor in the pointer commits to the artifact bytes. Anyone who can fetch the artifact at that commit can verify it has not been tampered with, but the artifact is supplemental. If mirror content and chain events disagree, the chain and reproduced Digest win.
 
-The gitlawb rail is enabled by default for approved public ledger artifacts and uses the same public-safety posture as the GitHub mirror. Raw assay-preparation handoffs, unreviewed claims, provider packets, secrets, private keys, operator notes, private material, and sensitive wet-lab coordination data are not eligible for automatic push. A gitlawb outage records degraded mirror status and does not change canonical ledger truth.
+The gitlawb rail is enabled by default for approved public ledger artifacts and uses the same public-safety posture as the GitHub mirror. Published candidate and family sequences are eligible for public replication; raw assay-preparation handoffs, unreviewed claims, provider packets, secrets, private keys, operator notes, private material, and sensitive wet-lab coordination data are not eligible for automatic push. A gitlawb outage records degraded mirror status and does not change canonical ledger truth.

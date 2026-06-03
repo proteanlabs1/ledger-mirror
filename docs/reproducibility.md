@@ -5,7 +5,7 @@ The verification recipe. Five steps. Two for-real CLI commands. No login. No wal
 ## Step 1 — Read the record from the chain
 
 ```bash
-PROXY=0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364
+PROXY=0xE3c261F3C05D4c4710003cd6066EfD95094cf5f0
 RECORD_ID=0xdcda8ebec2501afcd69041fd2269b07749e27c32d7b95f01776e473df05f4c57
 RPC=https://mainnet.base.org
 
@@ -23,7 +23,7 @@ The contract stores `contentDigest = keccak256(abi.encode(envelope))`. The `enve
 ```bash
 # Fetch the RecordContentEmitted log for this recordId:
 TOPIC0=0x7da545fcdedb56c3ad649b338af71c9a9195267ef123760e286463af4be71ee3
-cast logs --address $PROXY --from-block 46612390 \
+cast logs --address $PROXY --from-block 46837000 \
   --topic $TOPIC0 --topic $RECORD_ID --rpc-url $RPC
 ```
 
@@ -41,7 +41,7 @@ python3 index_ledger.py \
   --rpc $RPC \
   --proxy $PROXY \
   --db /tmp/protean.db \
-  --from-block 46612390 \
+  --from-block 46837000 \
   --once
 
 # Compute the digest
@@ -50,7 +50,7 @@ python3 index_ledger.py --digest-only --db /tmp/protean.db
 
 The digest output should match the one served at https://www.protean.sh/ledger/api/v1/indexer/digest. If they match, you have just reproduced the entire ledger state from chain events using only a public RPC.
 
-Reference digest for the launch state (block range 46612390 -> 46613079, the four bootstrap records confirmed):
+Reference digest for the launch state (block range 46837000 -> 46613079, the four bootstrap records confirmed):
 
 ```
 sha256:6049438bd0527c25270ce6cbd0e7bac7912a735e5e0e95ca65fc703910f747f6

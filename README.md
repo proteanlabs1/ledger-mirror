@@ -10,8 +10,9 @@ metadata, schema documentation, per-record JSON, the canonical
 indexer) that the verification recipe references.
 
 It is **not** the primary Protean Labs repository. It contains no
-research code, no candidate sequences, no Galen state, no Bankr
-credentials, no private scientific work. Everything here is
+private research code, no unpublished candidate sequences, no Galen state,
+no Bankr credentials, no private scientific work. Full sequences may appear
+when a candidate or family has intentionally been published. Everything here is
 mechanically generated from a strict allowlist in the private repo and
 re-published whenever the chain state advances.
 
@@ -19,15 +20,15 @@ re-published whenever the chain state advances.
 
 ```
 chainId:  8453 (Base mainnet)
-proxy:    0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364
-impl:     0x212Af224A03c3d2e9D07Db7299b1b34affBfEB3D
+proxy:    0xE3c261F3C05D4c4710003cd6066EfD95094cf5f0
+impl:     0xf343dC86b186D2A1C7A052252D150672308854c4
 schema:   protean.ledger.v1
 ```
 
 Basescan, verified source:
 
-- Proxy: https://basescan.org/address/0x2a6f84fa0a09b1c04f9edacccf6de58f11a4a364#code
-- Implementation: https://basescan.org/address/0x212af224a03c3d2e9d07db7299b1b34affbfeb3d#code
+- Proxy: https://basescan.org/address/0xe3c261f3c05d4c4710003cd6066efd95094cf5f0#code
+- Implementation: https://basescan.org/address/0xf343dc86b186d2a1c7a052252d150672308854c4#code
 
 ## How to verify (without trusting us)
 
@@ -56,10 +57,10 @@ the explorer.
 | `contracts/ProteanLedger.abi.json` | The implementation ABI at the deployed commit. |
 | `deployments/base-mainnet.json` | Proxy, implementation, deployer, role topology, deployment block range. |
 | `artifacts/mainnet/*.json` | One JSON per record on chain, in canonical-bytes form. |
-| `docs/schema.md` | The 14 RecordTypes, 14 RelationTypes, 10 LifecycleStates, 6 DisclosureStates, ordinal-pinned. |
+| `docs/schema.md` | The 17 RecordTypes, 20 RelationTypes, 10 LifecycleStates, 6 DisclosureStates, ordinal-pinned. |
 | `docs/architecture.md` | UUPS proxy + role topology + Bankr-isolation invariant. |
 | `docs/roles.md` | The 8 roles and who holds each. |
-| `docs/events.md` | The 14 events the contract emits + their indexed parameters. |
+| `docs/events.md` | The 17 events the contract emits + their indexed parameters. |
 | `docs/provenance.md` | What the chain anchors and what it doesn't. |
 | `docs/reproducibility.md` | The 5-step recipe with concrete commands. |
 | `diagrams/architecture.mmd` | Mermaid diagram of the architectural topology. |
@@ -70,7 +71,7 @@ the explorer.
 
 - No `.env`, no API keys, no GitHub tokens.
 - No Galen state, OpenClaw config, or operator runbooks.
-- No raw peptide sequences, candidate details, scoring internals.
+- No unpublished peptide sequences, private candidate details, or scoring internals.
 - No autonomous-thesis source or prose-model output.
 - No private pipeline code.
 - No Bio repo at large.

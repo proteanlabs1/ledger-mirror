@@ -18,7 +18,7 @@ Eight roles. Each is a keccak256 of a string constant declared in the contract s
 The Bankr wallet at `0x074abfb24d3fe2254672dc73f05c9696111033de` holds **exactly one role** — `AUTOMATION_WRITER_ROLE`. Verify directly:
 
 ```bash
-PROXY=0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364
+PROXY=0xE3c261F3C05D4c4710003cd6066EfD95094cf5f0
 BANKR=0x074abfb24d3fe2254672dc73f05c9696111033de
 RPC=https://mainnet.base.org
 

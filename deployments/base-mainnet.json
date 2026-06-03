@@ -1,10 +1,20 @@
 {
-  "basescanImplementationUrl": "https://basescan.org/address/0x212af224a03c3d2e9d07db7299b1b34affbfeb3d#code",
-  "basescanProxyUrl": "https://basescan.org/address/0x2a6f84fa0a09b1c04f9edacccf6de58f11a4a364#code",
+  "basescanImplementationUrl": "https://basescan.org/address/0xf343dc86b186d2a1c7a052252d150672308854c4#code",
+  "basescanProxyUrl": "https://basescan.org/address/0xe3c261f3c05d4c4710003cd6066efd95094cf5f0#code",
   "chainId": 8453,
-  "deployedAt": "2026-05-29T00:22:43.422000+00:00",
-  "deploymentBlock": 46612390,
-  "implementation": "0x212Af224A03c3d2e9D07Db7299b1b34affBfEB3D",
-  "proxy": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+  "deployedAt": "2026-06-03T05:09:07+00:00",
+  "deploymentBlock": 46837000,
+  "deploymentBlockEnd": 46837017,
+  "implementation": "0xf343dC86b186D2A1C7A052252D150672308854c4",
+  "implementationTx": "0xa1bf36dcad7504d2821eab7d35c05589d000a982af31335b608e428fad358b4e",
+  "predecessor": {
+    "deploymentBlock": 46612390,
+    "implementation": "0x212Af224A03c3d2e9D07Db7299b1b34affBfEB3D",
+    "proxy": "0x2a6f84fA0a09b1c04F9edAccCF6De58F11a4a364",
+    "status": "historical-pre-full-sequence-ledger"
+  },
+  "proxy": "0xE3c261F3C05D4c4710003cd6066EfD95094cf5f0",
+  "proxyTx": "0x834f63fb05d76a52083ee93d8f821669487c3828422cb82506c07b2908fe0a76",
+  "publicationAttestationSchema": "protean.publication-attestation.v1",
   "schemaVersion": "protean.ledger.v1"
 }

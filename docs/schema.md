@@ -3,7 +3,7 @@
 Schema version: `protean.ledger.v1`
 Ordinals are pinned. Adding ordinals is allowed; reordering them is not.
 
-## RecordType (14)
+## RecordType (17)
 
 | Ordinal | Name | Notes |
 |---:|---|---|
@@ -12,17 +12,20 @@ Ordinals are pinned. Adding ordinals is allowed; reordering them is not.
 | 2  | `Hypothesis` | a falsifiable claim |
 | 3  | `Experiment` | a planned or executed experimental procedure |
 | 4  | `EvidenceBundle` | a curated collection of supporting evidence |
-| 5  | `Candidate` | a candidate molecule; commitment-only by default |
+| 5  | `Candidate` | a candidate molecule; published records include full sequence plus hashes |
 | 6  | `Thesis` | a published paper |
-| 7  | `AssayResult` | a wet-lab result; commitment-only by default |
+| 7  | `AssayResult` | a wet-lab result; review-gated publication |
 | 8  | `Collection` | a publication-time grouping |
 | 9  | `RetractionNotice` | the authoritative retraction artifact |
 | 10 | `ExternalSignal` | a recorded external signal (literature, data) |
 | 11 | `Governance` | a governance act (role grant, anchor, pause/unpause) |
 | 12 | `ScientificAsset` | a citable aggregation of records |
 | 13 | `IPAsset` | a provisional IP declaration; gated on `IP_DECLARANT_ROLE` |
+| 14 | `CandidateFamily` | a published candidate family/cohort |
+| 15 | `CandidateLineage` | candidate parent/child lineage |
+| 16 | `FamilyLineage` | family parent/child lineage |
 
-## RelationType (14)
+## RelationType (20)
 
 | Ordinal | Name |
 |---:|---|
@@ -40,6 +43,12 @@ Ordinals are pinned. Adding ordinals is allowed; reordering them is not.
 | 11 | `Anchors` |
 | 12 | `AssetOf` |
 | 13 | `ProtectedBy` |
+| 14 | `ParentOf` |
+| 15 | `ChildOf` |
+| 16 | `MemberOfFamily` |
+| 17 | `VariantOf` |
+| 18 | `FamilyDerivedFrom` |
+| 19 | `PublishedAs` |
 
 Reserved (documented, not enum-added): `LicensedTo`, `OwnedBy`, `WrappedBy`. See `docs/architecture.md` for the upgradeability strategy.
 
