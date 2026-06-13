@@ -157,7 +157,7 @@
       "size_bytes": 27486
     }
   ],
-  "generatedAt": "2026-06-03T05:33:18.410634+00:00",
+  "generatedAt": "2026-06-13T06:16:51.293923+00:00",
   "schema": "protean.ledger-mirror.manifest.v1",
-  "sourceRepoCommit": "e5d4a927fee6f6df47cabee15dda897095184d97"
+  "sourceRepoCommit": "bb485415d843af0e461eeaa73dbca97df432d31d"
 }
